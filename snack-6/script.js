@@ -57,11 +57,12 @@ const books = [
 const areThereAvailableBooks = books.some((b) => b.available);
 console.log("areThereAvailableBooks", areThereAvailableBooks);
 
-const booksByPrice = books.sort((a, b) => {
+const booksByPrice = structuredClone(books).sort((a, b) => {
   const priceA = parseInt(a.price);
   const priceB = parseInt(b.price);
   return priceA - priceB;
 });
+console.log("books", books);
 console.log("booksByPrice", booksByPrice);
 
 booksByPrice.sort((a, b) =>
